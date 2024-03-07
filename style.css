@@ -18,20 +18,27 @@ section{
 article{
     margin-top: 10%; /* Environ 80px sur mon écran de test */
 }
+img{
+    width: 90px;
+    height: 90px;
+    object-fit: scale-down;
+}
 span{
     color: transparent;
 }
 footer{
     text-align: center;
 }
+.fa-circle-plus, .fa-circle{
+    color: #db6578;
+}
 .dice{
+    box-sizing:content-box;
     text-align: center;
-    min-width: 50px;
-    height: 50px;
+    min-width: 90px;
+    height: 90px;
     margin-left: -4%;
-    /* margin-top: 80px; */
     margin-top: 12%;
-    border: 1px solid black;
     align-self: center;
     justify-self: center;
 }
@@ -67,6 +74,9 @@ footer{
     max-width: 80px;
     height: 50px;
     border: 1px solid black;
+}
+.active-player{
+
 }
 #global-score{
     color: #db6578;
