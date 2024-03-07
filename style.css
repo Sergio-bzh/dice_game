@@ -27,7 +27,10 @@ span{
     color: transparent;
 }
 footer{
+    color: antiquewhite;
     text-align: center;
+    font-weight: 100;
+    font-style: italic;
 }
 .fa-circle-plus, .fa-circle{
     color: #db6578;
@@ -43,8 +46,9 @@ footer{
     justify-self: center;
 }
 .dice-action{
+    min-width: 20%;
     text-align: center;
-    margin-left: -5.5%;
+    margin-left: -7%;
     margin-top: 10%;
     margin-bottom: 3%;
     align-self: center;
@@ -62,26 +66,65 @@ footer{
     background-color: #eb4d4c;
 }
 .bottom-content-left{
-    margin-left: 20%;
+    margin-left: 17%;
     margin-right: 20%;
     min-width: 80px;
     height: 50px;
     border: 1px solid black;
 }
 .bottom-content-right{
-    margin-left: 18%;
+    margin-left: 12%;
     margin-right: 20%;
     max-width: 80px;
     height: 50px;
     border: 1px solid black;
 }
-.active-player{
-
+.active-player{/* ATTENTION ! classe temporaire me servant de répère pour mon JS est à supprimer par la suite !*/
+    font-weight: bolder;
 }
-#global-score{
-    color: #db6578;
+.global-score{
     margin-top: 5%;
 }
-#round-score{
+.global-score, .fa-rotate, .fa-file-arrow-down{
+    color: #db6578;
+}
+.round-score{
     color: white;
+}
+
+/* Stylization for devices with screen bigger than smartphones */
+
+@media screen and (min-width: 820px) and (orientation: portrait){
+    h1{
+        margin-top: 2%;
+        position: absolute;
+        margin-left: 33.5vw;
+    }
+    main{
+        max-width: 75vw;
+        min-height: 33%;
+        margin-top: 45%;
+    }
+}
+@media screen and (min-width: 1024px) and (orientation: landscape){
+    main{
+        max-width: 90%;
+        margin-top: 18%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    h1{
+        margin-left: 31.5vw;
+    }
+    main{
+        margin-top: 14%;
+        max-width: 70%;
+    }
+    .dice-action{
+        min-width: 15%;
+        margin-left: -2%;
+    }
+    .bottom-content-right{
+        margin-left: 20%;
+    }
 }
