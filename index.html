@@ -12,7 +12,40 @@
     <title>Dynamiser un site web avec JavaScript</title>
 </head>
 <body>
-    <main></main>
+    <main>
+        <header>
+            <h1 class="text-center text-uppercase fs-6">New game</h1>
+        </header>
+        <section>
+            <article class="content-left">
+                <h2 class="text-uppercase text-center">Player 1</h2>
+                <div id="global-score" class="text-center fs-3">43</div>
+            </article>
+
+                <div class="dice content-center">Dice</div>
+
+            <article class="content-right">
+                <h2 class="text-uppercase text-center">Player 2</h2>
+                <div id="global-score" class="text-center fs-3">72</div>
+            </article>
+        </section>
+        <section>
+            <div class="content-left bottom-content bottom-content-left">
+                <legend class="text-uppercase text-center fs-6" >Current
+                    <div id="round-score" class="fs-6">11</div>
+                </legend>
+            </div>
+            <div class="dice-action content-center">
+                <div class="text-uppercase"><p>Roll<span>_</span>dice</p></div>
+                <div class="text-uppercase">Hold</div>
+            </div>
+            <div class="content-right bottom-content bottom-content-right">
+                <legend class="text-uppercase text-center fs-6" >Current
+                    <div id="round-score" class="fs-6">0</div>
+                </legend>
+            </div>
+        </section>
+    </main>
     <footer>Tous drois réservés &copy; 2024</footer>
     <script src="script.js"></script>
 </body>
