@@ -22,12 +22,16 @@ let randomNumber = 0;
 const diceFaces = [
     'assets/images/one.jpg', 'assets/images/two.jpg','assets/images/three.jpg',
     'assets/images/four.jpg','assets/images/five.jpg', 'assets/images/six.jpg'
-    ];
+];
+const defaultImage = diceFaces[0];
+let newGamePoint = 'Player 1 <i class="fa-solid fa-circle fs-6 text-center"></i>';
+let activePoint  = 'Player 2 <i class="fa-solid fa-circle fs-6 text-center"></i>';
 /** END storage and other needed variables */
 
-
 /** START event listeners*/
-rollDice.addEventListener('click', function() {
+newGame.addEventListener('click', resetParameters)
+
+rollDice.addEventListener('click', () => {
     randomNumber = generateRandomInt();
     diceFaces.forEach(function (face, index) {
         if(randomNumber == index){
@@ -39,7 +43,6 @@ rollDice.addEventListener('click', function() {
 console.log(randomNumber);
 /** END event listeners*/
 
-
 /** START DOM modification */
 
 /** END DOM modification */
@@ -49,4 +52,15 @@ function generateRandomInt(min = 0, max = 6) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function resetParameters(){
+    dice.src = defaultImage;
+    globalScore1.innerText  = 0;
+    globalScore2.innerText  = 0;
+    roundScore1.innerText   = 0;
+    roundScore2.innerText   = 0;
+    player1.innerHTML = newGamePoint;
+    player1.classList.add('fw-bolder');
+    player2.classList.remove('fw-bolder');
 }
