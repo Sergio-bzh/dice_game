@@ -79,9 +79,6 @@ footer{
     height: 50px;
     border: 1px solid black;
 }
-.active-player{/* ATTENTION ! classe temporaire me servant de répère pour mon JS est à supprimer par la suite !*/
-    font-weight: bolder;
-}
 .global-score{
     margin-top: 5%;
 }
@@ -93,7 +90,6 @@ footer{
 }
 
 /* START stylization for devices with screen larger than smartphones */
-
 @media screen and (min-width: 820px) and (orientation: portrait){
     h1{
         margin-top: 2%;
