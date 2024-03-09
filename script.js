@@ -35,9 +35,6 @@ rollDice.addEventListener('click', swapActivePlayer, true);
 hold.addEventListener('click', holdScore);
 /** END event listeners*/
 
-
-
-
 /** START functions */
 function generateRandomInt(min = 0, max = 6) {
     min = Math.ceil(min);
