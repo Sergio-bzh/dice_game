@@ -31,8 +31,12 @@ let activePoint  = '<i class="fa-solid fa-circle fs-6 text-center"></i> Player 2
 
 /** START event listeners*/
 newGame.addEventListener('click', resetAllParameters);
-rollDice.addEventListener('click', swapActivePlayer);
+rollDice.addEventListener('click', swapActivePlayer, true);
+hold.addEventListener('click', holdScore);
 /** END event listeners*/
+
+
+
 
 /** START functions */
 function generateRandomInt(min = 0, max = 6) {
@@ -50,6 +54,7 @@ function resetAllParameters(){
     player1.innerHTML = newGamePoint;
     player1.classList.add('fw-bolder');
     player2.classList.remove('fw-bolder');
+    rollDice.classList.remove('d-none');
 };
 
 function resetRoundCounter(){
@@ -96,5 +101,33 @@ function swapActivePlayer(){
         };
     });
     return randomNumber;
+}
+
+function holdScore(){
+    if(player1.classList.contains('fw-bolder')){
+        globalScore1.textContent = parseInt(globalScore1.textContent) + parseInt(roundScore1.textContent);
+        resetRoundCounter();
+        player1.classList.remove('fw-bolder');
+        player2.classList.add('fw-bolder');
+        player1.innerHTML = 'Player 1'
+        player2.innerHTML = activePoint;
+        if(parseInt(globalScore1.textContent) >= 100){
+            console.log('Le joueur 1 a remporté la partie !');
+            rollDice.removeEventListener('click', swapActivePlayer, true);
+            rollDice.classList.add('d-none');
+        }
+    } else if(player2.classList.contains('fw-bolder')){
+        globalScore2.textContent = parseInt(globalScore2.textContent) + parseInt(roundScore2.textContent);
+        resetRoundCounter();
+        player1.classList.add('fw-bolder');
+        player2.classList.remove('fw-bolder');
+        player2.innerHTML = 'Player 2';
+        player1.innerHTML = newGamePoint;
+        if(parseInt(globalScore1.textContent) >= 100){
+            console.log('Le joueur 2 a remporté la partie !');
+            rollDice.removeEventListener('click', swapActivePlayer, true);
+            rollDice.classList.add('d-none');
+        }
+    }
 }
 /** END functions */
