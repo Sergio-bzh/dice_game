@@ -1,0 +1,11 @@
+# Déclaration du micro-service
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:1.20
+    command: nginx -g "daemon off;"
+    ports:
+      - "8000:80"
+    volumes:
+      - ./app:/var/www/html
+      - ./vhost.nginx.conf:/etc/nginx/conf.d/default.conf
