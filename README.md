@@ -11,9 +11,12 @@ Ce projet me sert d'excercice pour mettre en pratique les connaissances acquises
 ## Installer le projet
 - Ouvrir un terminal
 - Vérifier que Docker est bien lancé : ```docker ps```
-- Clôner le projet : ```git clone url_.git```
+- Clôner le projet : ```git clone https://github.com/Sergio-bzh/dice_game.git```
 - Se positionner dans le dossier du projet : ```cd dossier-projet```
 - Lancer le projet : ```docker compose up -d```
 
 ## Utiliser le projet
 - Avec un navigateur web aller sur : [http://localhost:8000](http://localhost:8000)
+
+## Arrêter et supprimer le conteneur
+- Dans le terminal : ```docker compose down```
